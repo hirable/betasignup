@@ -1108,7 +1108,7 @@
   }
 }
  
- .wrap {
+ .wrap1 {
   display: inline-block;
   width: 60%;
   padding-bottom: 0;
@@ -1126,7 +1126,7 @@
 .wrap2 {
   display: inline-block;
   width: 30%;
-  padding-bottom: 0;
+  padding: 0;
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
