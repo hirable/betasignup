@@ -1107,21 +1107,33 @@
     overflow: visible !important;
   }
 }
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
+ 
+ .wrap {
+  width: 60%;
+  padding-bottom: 0;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
 
-.video-container iframe,  
-.video-container object,  
-.video-container embed {
+.video-container{
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-container iframe {
   position: absolute;
+  text-align: center;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 100%;
 }

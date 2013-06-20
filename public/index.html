@@ -10,6 +10,50 @@
     <!-- Le styles -->
     <link href="../assets/bootstrap.css" rel="stylesheet">
     <link href="../assets/bootstrap-responsive.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+    <script>
+      function calculate_output_values()
+      {
+        $("label[for='output_label']").text($('#range_one').val() / $('#b').val());
+        
+      };
+      
+      $(document).ready(function() {
+          // Handler for .ready() called.
+          
+          // Find all YouTube videos
+          var $allVideos = $("iframe[src^='http://www.youtube.com']"),
+
+          // The element that is fluid width
+          $fluidEl = $(".wrap");
+
+          // Figure out and save aspect ratio for each video
+          $allVideos.each(function() {
+          $(this).data('aspectRatio', this.height / this.width)
+          // and remove the hard coded width/height
+          .removeAttr('height')
+          .removeAttr('width');
+          });
+
+      // When the window is resized
+      $(window).resize(function() {
+          var newWidth = $fluidEl.width();
+          // Resize all videos according to their own aspect ratio
+          $allVideos.each(function() {
+
+          var $el = $(this);
+          $el
+            .width(newWidth)
+            .height(newWidth * $el.data('aspectRatio'));
+          });
+
+          // Kick off one resize to fix all videos on page load
+        }).resize();
+      
+      });
+    </script>
+
 
     <style>
 
@@ -194,52 +238,73 @@
 
   <body>
 
-     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a href="http://privatebeta.hirable.org" class="brand">Join the Private Beta Test</a>
-          <div class="pull-right">
-            <a href="mailto:evelyn@hirable.org?Subject=Hello%20There!" class="brand">Contact Us</a>
+      <!--Navbar-->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a href="privatebeta" class="brand">Join the Private Beta Test</a>
+            <div class="pull-right">
+              <a href="mailto:evelyn@hirable.org?Subject=Hello%20There!" class="brand">Contact Us</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 
+      <!--Top Container-->
       <div class="hero-unit">
-        <div class="video-container">
-          <iframe src="http://www.youtube.com/embed/rwX8Tjj6HNQ?rel=0" width="800" height="450" frameborder="0">
-          </iframe>
+
+        <!-- Youtube Video -->
+        <div class ="wrap">
+          <div id="video-container">
+           <iframe width="1280" height="720" src="http://www.youtube.com/embed/rwX8Tjj6HNQ?rel=0" frameborder="0" allowfullscreen > </iframe>
+          </div>
+        </div>
+        <!--Right Bar Call to Action-->
+        <div class="container carousel-caption pull-right">
+          <h2>Test It Out, Keep Any Rewards</h2>
+          <p class="lead">Pass your insights along.  Great opportunities - candidates or employers - need a way to meet each other.  Do it through high quality referrals with recursive rewards.  You keep any rewards earned while helping us beta test the concept.</p><br>
+          <a class="btn btn-large btn-primary" href="#">Sign up today</a>
         </div>
       </div>
 
- <div class="container marketing">
+      <!--Middle Panels-->
+      <div class="container marketing">
 
-       <hr class="featurette-divider"> 
+        <hr class="featurette-divider">
 
-      <div class="featurette">
-        <img class="featurette-image pull-left" src="../assets/featurette1.png">
-        <h2 class="featurette-heading">MIT Media Lab<span class="muted"><br>Experimented on a Massive Scale</span></h2>
-        <p class="lead">In a nationwide sourcing challenge, a recursive reward adding up to $4000 was offered across chains of peer referrals leading to success. The MIT Media Lab team won with 3 times the number of recruits compared to the next place team which used social media without recursive rewards: 4665 people joined the MIT team in under 9 hours.</p>
-      </div></img>
+        <!--Recursive Rewards Explained-->
+        <div class="featurette">
+          <img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive-Frame-2.png'" onmouseout="this.src='../assets/Recursive-Frame-1.png'">
+          <h2 class="featurette-heading">Recursive Rewards<span class="muted"><br>Simply Explained/span></h2>
+          <p class="lead">The approach rewards people who either solve or make real contributions. Check out the slide bar below to see how recursive rewards are calculated. It's very simple!</p>
+        </div>
 
-      <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/featurette2.png">
-        <h2 class="featurette-heading">Recursive Rewards<span class="muted"><br>How Does it Work?</span></h2>
-        <p class="lead">The approach rewards people who either solve or make real contributions. Check out the slide bar below to see how recursive rewards are calculated. It's very simple!</p>
-      </div></img>
+        <!--MIT Media Lab-->
+        <div class="featurette">
+          <img class="featurette-image pull-right" src="../assets/Maps-Animation.gif" alt="../assets/Maps Together.png" onmouseover="this.src='../assets/Maps-Frame-1.png'" onmouseout="this.src='../assets/Maps-Frame-2.png'">
+          <h2 class="featurette-heading">MIT Media Lab<span class="muted"><br>Experimented on a Massive Scale</span></h2>
+          <p class="lead">Recursive rewards were offered to chains of successful peer referrals in a nationwide sourcing challenge by the MIT Media Lab team, who successfully recruited three times the number of participants as the 2nd place team - which used general social media but no recursive incentives - and won with a time of under 9 hours.</p>
+        </div>
 
-      <hr class="featurette-divider">
+        <hr class="featurette-divider">
 
-
+        <!--Slider Widget-->
+        <form oninput="calculate_output_values();">
+          <input type="range" id="range_one" min="1" max="15000" value="5000" step="1"> <br> &divide; <br>
+          <input type="number" id="b" value="5">= <br>
+         </form>
+        <label for="output_label"></label>
+        
+        <hr class="featurette-divider">
 
   </body>
 
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2013 Hirable.org &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p>&copy; 2013 Hirable.org</p>
   </footer>
 
 
@@ -252,7 +317,6 @@
 
   ga('create', 'UA-41754659-1', 'hirable.org');
   ga('send', 'pageview');
-
-</script>
+  </script>
 
 </html>

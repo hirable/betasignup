@@ -1,4 +1,11 @@
 Landingpage::Application.routes.draw do
+  resources :signups
+  
+  get "signups/new"
+
+  match "privatebeta" => "signups#new"
+  #resources :privatebeta, :controller => 'signups'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
