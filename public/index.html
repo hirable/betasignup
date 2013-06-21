@@ -16,7 +16,7 @@
       function calculate_output_values()
       {
         $("label[for='output_label']").text($('#range_one').val() / $('#b').val());
-        
+      
       };
       
       $(document).ready(function() {
@@ -117,14 +117,14 @@
     ------------------------- */
 
     .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+      margin: 40px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      padding-top: 10px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
     }
     .featurette-image {
-      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+      margin-top: 0px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
     }
 
     /* Give some space on the sides of the floated elements so text doesn't run right into it. */
@@ -138,6 +138,12 @@
     /* Thin out the marketing headings */
     .featurette-heading {
       font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .featurette-sub-heading {
+      font-size: 30px;
       font-weight: 300;
       line-height: 1;
       letter-spacing: -1px;
@@ -169,7 +175,7 @@
 
       .featurette {
         height: auto;
-        padding: 0;
+        padding: 10;
       }
       .featurette-image.pull-left,
       .featurette-image.pull-right {
@@ -258,15 +264,15 @@
         <div class="wrap1">
 
           <div id="video-container">
-            <iframe width="1280" height="720" src="http://www.youtube.com/embed/rwX8Tjj6HNQ?rel=0" frameborder="0" allowfullscreen > </iframe>
+            <iframe width="1280" height="720" src="http://www.youtube.com/embed/F6qzfLI2Qsc?rel=0" frameborder="0" allowfullscreen > </iframe>
           </div>
 
         </div>
 
         <div class="wrap2 pull-right">
-          <h2>Test It Out.<br>Keep Any Rewards.</h2>
-          <p>Pass your insights along. You keep any rewards earned while helping us beta test the concept.</p><br>
-          <a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a>
+          <h2 class="text-center">Test It Out.<br>Keep Any Rewards.</h2><br>
+          <p>Pass your insights along on great candidates or employers.  Do it through high quality referrals with recursive rewards.  You keep any rewards you earn while helping us beta test the concept.</p><br>
+          <div class="text-center"><a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a></div>
         </div>
 
     </div>
@@ -279,30 +285,62 @@
 
         <!--Recursive Rewards Explained-->
         <div class="featurette">
-          <img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 2.png'" onmouseout="this.src='../assets/Recursive 1.png'">
-          <h2 class="featurette-heading">Recursive Rewards <span class="muted">Simply Explained</span></h2>
-          <p class="lead">The approach rewards people who either solve or make real contributions. Check out the slide bar below to see how recursive rewards are calculated. It's very simple!</p>
+          <img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
+          <h2 class="featurette-heading"><br>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
+          <p class="lead">The approach rewards people who either solve or make real contributions. Our first degree peers may not always have the "right person" to refer to us. Instead of badgering them with large referral bonuses, which are no match for the force of existing friendship or altruism, we can save the financial incentives for the peers of and their peers' peers contacts, in order to get directed to more promising talent communities.</p>
         </div>
 
         <hr class="featurette-divider">
 
         <!--MIT Media Lab-->
         <div class="featurette">
-          <img class="featurette-image pull-right" src="../assets/Maps-Animation.gif" onmouseover="this.src='../assets/Maps 1.png'" onmouseout="this.src='../assets/Maps 2.png'">
-          <h2 class="featurette-heading">MIT Media Lab <span class="muted">Experimented on a Massive Scale</span></h2>
-          <p class="lead">Recursive rewards were offered to chains of successful peer referrals in a nationwide sourcing challenge by the MIT Media Lab team, who successfully recruited three times the number of participants as the 2nd place team - which used general social media but no recursive incentives - and won with a time of under 9 hours.</p>
+          <img class="featurette-image pull-right" src="../assets/Map-Animation.gif" onmouseover="this.src='../assets/Map 2.png'" onmouseout="this.src='../assets/Map 1.png'">
+          <h2 class="featurette-heading">MIT Media Lab <span class="muted featurette-sub-heading"><br>Experiment Applied</span></h2>
+          <p class="lead">Recursive rewards were offered to chains of successful peer referrals in a nationwide sourcing challenge by the MIT Media Lab team.  The team successfully recruited nearly 5000 participant, which was three times as many as any other team.  They were the only ones to apply recursive incentives, and clocked in under 9 hours.</p>
         </div>
 
         <hr class="featurette-divider">
 
         <!--Slider Widget-->
-        <form oninput="calculate_output_values();">
-          <input type="range" id="range_one" min="1" max="15000" value="5000" step="1"> <br> &divide; <br>
-          <input type="number" id="b" value="5">= <br>
-         </form>
-        <label for="output_label"></label>
-        
-        <a class="btn btn-large btn-primary" href="privatebeta">Get Started Today with the Private Beta Test</a>
+        <div class="featurette">
+          <div class="wrap3 pull-left">
+            <h4>Set Referral Bonus based on Policy:<br><br>
+              <span class="text-center" style="display:inline-block">
+                $
+                <span id="range" style="display:inline-block">
+                  5000
+                </span>
+              </span>
+            <form oninput="calculate_output_values();">
+              <div class="btn btn-medium btn-primary" style="display:inline-block">$0</div>
+              <input type="range" id="range_one" min="0" max="15000" value="5000" step="1000" onchange="showValue(this.value)" style="display:inline-block"/> 
+              <div class="btn btn-medium btn-primary" style="display:inline-block">$15,000</div><br>
+              <hr>
+              Set Peers in Placement Chain:<br><br>
+              <input type="number" id="b" value="2" min="1" max="5" step="1"/>
+            </form>
+            <hr>
+            Baseline recursive reward to each peer:<br><br>
+            <div class="text-center">
+              <span class="btn btn-medium btn-primary" style="display:inline-block">$
+                <label for="output_label".toFixed(0) style="display:inline-block">
+                  2500
+                </label>
+              </span>
+            </div>
+            </h2>
+          </div>
+          
+          <div>
+            <h2 class="featurette-heading">The Calculation is Simple<span class="muted featurette-sub-heading"><br>Play with the assumptions to see<br></span></h2>
+            <p class="lead">Check out the slide bar to see how recursive rewards are calculated. It's very simple!  Slide the reward value between $0 and $15,000 (which are actual ranges of referral bonus policies involved in this beta test). Then adjust the assumption of connections which lead to a successful placement.  The answer is how much you could expect to get paid when you help reach a hiring situation.  It is truly win-win for everyone involved. </p>
+          </div>
+
+          <div class="text-center">
+            <a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a><br>
+          </div>
+
+        </div>
 
         <hr class="featurette-divider">
 
@@ -315,7 +353,14 @@
   </footer>
 
 
+  <!--Range Bar Calculation-->
+  <script type="text/javascript">
+      function showValue(newValue) {
+        document.getElementById("range").innerHTML=newValue;
+      }
+  </script>
 
+  <!--Google Analytics-->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
