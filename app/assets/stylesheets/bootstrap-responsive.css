@@ -1125,7 +1125,7 @@
 
 .wrap2 {
   display: inline-block;
-  text-align: justify;
+  text-align: left;
   width: 30%;
   padding-right: 40px;
   padding-left: 40px;
