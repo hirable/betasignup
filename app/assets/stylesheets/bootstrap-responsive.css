@@ -947,6 +947,9 @@
   .carousel-caption {
     position: static;
   }
+  h2 {
+    font-size: 12pt;
+  }
 }
 
 @media (max-width: 979px) {
@@ -1127,11 +1130,10 @@
   display: inline-block;
   text-align: left;
   width: 30%;
+  max-height: 90%;
+  overflow: hidden;
   padding-right: 40px;
   padding-left: 40px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
   color: inherit;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -1155,9 +1157,7 @@
           border-radius: 6px;
 }
 
-
-
-.video-container{
+.video-container {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
@@ -1192,6 +1192,9 @@ input[type='range']::-webkit-slider-thumb {
   -webkit-border-radius: 5px;
   background-color: #5bb75b;
   background-image: linear-gradient(to bottom, #62c462, #51a351);
+  background-image: -moz-linear-gradient(to bottom, #62c462, #51a351);
+  background-image: -o-linear-gradient(to bottom, #62c462, #51a351);
+  background-image: -webkit-linear-gradient(to bottom, #62c462, #51a351);
   border: 1px solid #999;
   height: 40px;
   width: 20px;
@@ -1232,3 +1235,10 @@ input[type='number']::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+
+
+padding: 11px 19px;
+  font-size: 17.5px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;

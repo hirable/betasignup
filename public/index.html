@@ -21,6 +21,7 @@
       
       $(document).ready(function() {
           // Handler for .ready() called.
+          var $wrap2 = $('wrap2'); //Cache this for performance
           
           // Find all YouTube videos
           var $allVideos = $("iframe[src^='http://www.youtube.com']"),
@@ -30,28 +31,49 @@
 
           // Figure out and save aspect ratio for each video
           $allVideos.each(function() {
-          $(this).data('aspectRatio', this.height / this.width)
-          // and remove the hard coded width/height
-          .removeAttr('height')
-          .removeAttr('width');
+            $(this).data('aspectRatio', this.height / this.width)
+            // and remove the hard coded width/height
+            .removeAttr('height')
+            .removeAttr('width');
           });
 
-      // When the window is resized
-      $(window).resize(function() {
-          var newWidth = $fluidEl.width();
-          // Resize all videos according to their own aspect ratio
-          $allVideos.each(function() {
+          var setWrap2Scale = function() {
+            var scaleSource = $wrap2.width(),
+            scaleFactor = 0.35,                     
+            maxScale = 600,
+            minScale = 30; //Tweak these values to taste
 
-          var $el = $(this);
-          $el
-            .width(newWidth)
-            .height(newWidth * $el.data('aspectRatio'));
-          });
+            var fontSize = scaleSource * scaleFactor; //Multiply the width of the body by the scaling factor:
+
+            if (fontSize > maxScale) fontSize = maxScale;
+            if (fontSize < minScale) fontSize = minScale; //Enforce the minimum and maximums
+
+            $('wrap2').css('font-size', fontSize + '%');
+          }
+
+          // When the window is resized
+          $(window).resize(function() {
+            setWrap2Scale();
+
+            var newWidth = $fluidEl.width();
+            // Resize all videos according to their own aspect ratio
+            $allVideos.each(function() {
+
+              var $el = $(this);
+              $el
+              .width(newWidth)
+              .height(newWidth * $el.data('aspectRatio'));
+            });
+
+          })
 
           // Kick off one resize to fix all videos on page load
-        }).resize();
+          .resize();
       
+          //Fire it when the page first loads:
+          setWrap2Scale();
       });
+
     </script>
 
 
@@ -271,7 +293,7 @@
 
         <div class="wrap2 pull-right">
           <h2 class="text-center">Test It Out.<br>Keep Any Rewards.</h2><br>
-          <p>Pass your insights along on great candidates or employers.  Do it through high quality referrals with recursive rewards.  You keep any rewards you earn while helping us beta test the concept.</p><br>
+          <p class="text-center">Pass your insights along on great candidates or employers.  Do it through high quality referrals with recursive rewards.  You keep any rewards you earn while helping us beta test the concept.</p><br>
           <div class="text-center"><a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a></div>
         </div>
 
@@ -285,9 +307,9 @@
 
         <!--Recursive Rewards Explained-->
         <div class="featurette">
-          <img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
+          <br><br><br><img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
           <h2 class="featurette-heading"><br>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
-          <p class="lead">The approach rewards people who either solve or make real contributions. Our first degree peers may not always have the "right person" to refer to us. Instead of badgering them with large referral bonuses, which are no match for the force of existing friendship or altruism, we can save the financial incentives for the peers of and their peers' peers contacts, in order to get directed to more promising talent communities.</p>
+          <p class="lead">We reward people who either solve or make real contributions. Our first degree peers may not always have the "right person" to refer to us. Instead of badgering them with large referral bonuses, which are no match for the force of existing friendship or altruism, we can save the financial incentives for the peers of and their peers' peers contacts, in order to get directed to promising talent communities.</p>
         </div>
 
         <hr class="featurette-divider">
@@ -304,31 +326,24 @@
         <!--Slider Widget-->
         <div class="featurette">
           <div class="wrap3 pull-left">
-            <h4>Set Referral Bonus based on Policy:<br><br>
-              <span class="text-center" style="display:inline-block">
-                $
-                <span id="range" style="display:inline-block">
-                  5000
-                </span>
-              </span>
-            <form oninput="calculate_output_values();">
-              <div class="btn btn-medium btn-primary" style="display:inline-block">$0</div>
-              <input type="range" id="range_one" min="0" max="15000" value="5000" step="1000" onchange="showValue(this.value)" style="display:inline-block"/> 
-              <div class="btn btn-medium btn-primary" style="display:inline-block">$15,000</div><br>
-              <hr>
-              Set Peers in Placement Chain:<br><br>
-              <input type="number" id="b" value="2" min="1" max="5" step="1"/>
-            </form>
-            <hr>
-            Baseline recursive reward to each peer:<br><br>
-            <div class="text-center">
-              <span class="btn btn-medium btn-primary" style="display:inline-block">$
-                <label for="output_label".toFixed(0) style="display:inline-block">
-                  2500
-                </label>
-              </span>
-            </div>
-            </h2>
+            <h3>Calculate Per Person Payout</h3>
+            <h4> Referral Bonus </h4>
+            
+            <h1 onclick="lessbonus()"; style="display:inline-block"><div class="btn btn-medium btn-success"> - </div></h1>
+            <div style="display:inline-block"><h3 id="referralbonus"> $5000 </h3></div>
+            <h1 onclick="morebonus()"; style="display:inline-block"><div class="btn btn-medium btn-success"> + </div></h1>
+
+
+            <h4> Number of Peers </h4>
+            <h1 id="psubt" onclick="lesspeers()"; style="display:inline-block"><div class="btn btn-medium btn-success"> - </div></h1>
+            <div style="display:inline-block"><h3 id="peersnumber"> 4 </h3></div>
+            <h1 id="padd" onclick="morepeers()"; style="display:inline-block"><div class="btn btn-medium btn-success"> + </div></h1>
+            
+            <h4> Payout Per Person </h4>
+            <h3 id="popp">$1250</h3>
+
+            <script type="text/javascript" src="../assets/widget.js"></script>
+              
           </div>
           
           <div>
