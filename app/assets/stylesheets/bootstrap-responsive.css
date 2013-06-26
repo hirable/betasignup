@@ -950,6 +950,9 @@
   h2 {
     font-size: 12pt;
   }
+  p {
+    font-size: 10pt;
+  }
 }
 
 @media (max-width: 979px) {
@@ -1113,7 +1116,7 @@
  
  .wrap1 {
   display: inline-block;
-  width: 60%;
+  width: 55%;
   padding-bottom: 0;
   margin-bottom: 30px;
   font-size: 18px;
@@ -1121,24 +1124,18 @@
   line-height: 30px;
   color: inherit;
   background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
 }
 
 .wrap2 {
   display: inline-block;
   text-align: left;
-  width: 30%;
+  width: 35%;
   max-height: 90%;
   overflow: hidden;
   padding-right: 40px;
   padding-left: 40px;
   color: inherit;
   background-color: #eeeeee;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
 }
 
 .wrap3 {
