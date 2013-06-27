@@ -264,6 +264,9 @@ a:focus {
 }
 
 .row {
+  margin-top: 30px;
+  padding: 60px;
+  position: relative;
   margin-left: -20px;
   *zoom: 1;
 }
@@ -282,7 +285,6 @@ a:focus {
 [class*="span"] {
   float: left;
   min-height: 1px;
-  margin-left: 20px;
 }
 
 .container,
@@ -310,6 +312,7 @@ a:focus {
 
 .span8 {
   width: 620px;
+  margin-right: 20px;
 }
 
 .span7 {
@@ -326,6 +329,7 @@ a:focus {
 
 .span4 {
   width: 300px;
+  margin-left: 20px;
 }
 
 .span3 {
@@ -409,8 +413,6 @@ a:focus {
   float: left;
   width: 100%;
   min-height: 30px;
-  margin-left: 2.127659574468085%;
-  *margin-left: 2.074468085106383%;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;

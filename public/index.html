@@ -11,72 +11,9 @@
     <link href="../assets/bootstrap.css" rel="stylesheet">
     <link href="../assets/bootstrap-responsive.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-
-    <script>
-      function calculate_output_values()
-      {
-        $("label[for='output_label']").text($('#range_one').val() / $('#b').val());
-      
-      };
-      
-      $(document).ready(function() {
-          // Handler for .ready() called.
-          var $wrap2 = $('wrap2'); //Cache this for performance
-          
-          // Find all YouTube videos
-          var $allVideos = $("iframe[src^='http://www.youtube.com']"),
-
-          // The element that is fluid width
-          $fluidEl = $(".wrap1");
-
-          // Figure out and save aspect ratio for each video
-          $allVideos.each(function() {
-            $(this).data('aspectRatio', this.height / this.width)
-            // and remove the hard coded width/height
-            .removeAttr('height')
-            .removeAttr('width');
-          });
-
-          var setWrap2Scale = function() {
-            var scaleSource = $wrap2.width(),
-            scaleFactor = 0.35,                     
-            maxScale = 600,
-            minScale = 30; //Tweak these values to taste
-
-            var fontSize = scaleSource * scaleFactor; //Multiply the width of the body by the scaling factor:
-
-            if (fontSize > maxScale) fontSize = maxScale;
-            if (fontSize < minScale) fontSize = minScale; //Enforce the minimum and maximums
-
-            $('wrap2').css('font-size', fontSize + '%');
-          }
-
-          // When the window is resized
-          $(window).resize(function() {
-            setWrap2Scale();
-
-            var newWidth = $fluidEl.width();
-            // Resize all videos according to their own aspect ratio
-            $allVideos.each(function() {
-
-              var $el = $(this);
-              $el
-              .width(newWidth)
-              .height(newWidth * $el.data('aspectRatio'));
-            });
-
-          })
-
-          // Kick off one resize to fix all videos on page load
-          .resize();
-      
-          //Fire it when the page first loads:
-          setWrap2Scale();
-      });
-
-    </script>
-
-
+    <script src="../assets/youtube.js"></script>
+    
+    
     <style>
 
     /* GLOBAL STYLES
@@ -206,12 +143,6 @@
         max-width: 40%;
         margin: 0 auto 20px;
       }
-      h2 {
-        font-size: 14pt;
-      }
-      p {
-        font-size: 12pt;
-      }
     }
 
 
@@ -258,12 +189,6 @@
         font-size: 18px;
         line-height: 1.5;
       }
-      h2 {
-        font-size: 14pt;
-      }
-      p {
-        font-size: 12pt;
-      }
     }
     </style>
 
@@ -287,30 +212,26 @@
             </div>
           </div>
         </div>
+        <div style="clear:both;"></div>
       </div>
 
 
+
       <!--Top Container-->
-      <div class="hero-unit">
-
+      <div class="row">
         <!-- Youtube Video -->
-        <div class="wrap1">
-
-          <div id="video-container" style="display:inline-block">
+        <div class="span8">
+          <div id="video-container">
             <iframe width="1280" height="720" src="http://www.youtube.com/embed/F6qzfLI2Qsc?rel=0" frameborder="0" allowfullscreen > </iframe>
           </div>
-          
         </div>
-
-        <div class="wrap2 pull-right" style="display:inline-block">
-          <h2 class="text-center">Make Hiring Easy with Recursive Rewards</h2>
-          <p class="text-center">It takes high quality referrals to find the perfect fit. We want to reward you for your insights on great candidates or employers, no matter where you are in the referral chain. Keep any rewards you earn while helping us beta test the concept.</p>
-          <div class="text-center"><a class="btn btn-primary" href="privatebeta">Join the Private Beta Test</a></div>
-        </div>
-
-    </div>
-              
         <!--Right Message Box with Call to Action-->
+        <div class="span4">
+          <h2 class="text-center">Make Hiring Easy with Recursive Rewards</h2><br>
+          <div class="text-center"><a class="btn btn-primary" href="privatebeta">Join the Private Beta Test</a></div><br>
+          <h5 class="text-center">It takes high quality referrals to find the perfect fit. We want to reward you for your insights on great candidates or employers, no matter where you are in the referral chain. Keep any rewards you earn while helping us beta test the concept.</h5>
+        </div>
+      </div>
         
 
       <!--Middle Panels-->
@@ -320,7 +241,7 @@
         <div class="featurette">
           <br><br><br><img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
           <h2 class="featurette-heading"><br>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
-          <p class="lead">Your peers may not know of a right person for the job, but their contacts may open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, making sure that they're trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
+          <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
         </div>
 
         <hr class="featurette-divider">
