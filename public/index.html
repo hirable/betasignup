@@ -72,6 +72,11 @@
       margin-top: 10px;
     }
 
+    .navbar-inner {
+      margin: 0px;
+    }
+
+
     /* Customize the top container 
     ------------------------------*/
 
@@ -80,12 +85,14 @@
       padding-top: 60px;
       position: relative;
       *zoom: 1;
-      background-color: #eeeeee;
       margin: 0;
       max-width: 100%;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
               box-sizing: border-box;
+    }
+    .top-container {
+      background-color: #eeeeee;
     }
 
 
@@ -128,9 +135,8 @@
     .wrap3 {
       display: inline-block;
       text-align: center;
-      width: 30%;
       padding: 30px;
-      margin-right: 60px;
+      margin-right: 0px;
       font-size: 18px;
       font-weight: 200;
       line-height: 30px;
@@ -174,23 +180,13 @@
         max-width: 40%;
         margin: 0 auto 20px;
       }
-      h2 {
-        font-size: 16px;
-      }
-      h4 {
-        font-size: 14px;
-      }
-      p {
-        font-size: 10px;
-      }
     }
 
 
     @media (max-width: 767px) {
       body {
-        padding: 0;
+        padding: 0 20px 40px;
       }
-
       .navbar-inner {
         margin: 0px;
       }
@@ -232,22 +228,8 @@
         font-size: 18px;
         line-height: 1.5;
       }
-      h2 {
-        font-size: 16px;
-      }
-      h4 {
-        font-size: 14px;
-      }
-      p {
-        font-size: 10px;
-      }
     }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 0;
-      }
-    }
 
     </style>
 
@@ -275,7 +257,7 @@
       </div>
 
 	<!--Top Container-->
-	<div class="row-fluid text-center">
+	<div class="row-fluid top-container text-center">
           <!-- Youtube Video -->
           <div class="span8 text-center">
             <div class="flex-video">
@@ -313,35 +295,34 @@
         <hr class="featurette-divider">
 
         <!--Slider Widget-->
-        <div class="featurette">
-          <div class="wrap3 pull-left">
-            <h3>Calculate Per Person Payout</h3>
-            <h4> Referral Bonus </h4>
+        <div class="row-fluid featurette">
+          <div class="wrap3 span4 pull-left">
+            <h3> Calculate Per Person Payout </h3>
+            <h4> Set Referral Bonus: </h4>
             
             <h1 onclick="lessbonus()"; style="display:inline-block"><div class="btn btn-medium btn-success"> - </div></h1>
             <div style="display:inline-block"><h3 id="referralbonus"> $5000 </h3></div>
             <h1 onclick="morebonus()"; style="display:inline-block"><div class="btn btn-medium btn-success"> + </div></h1>
 
 
-            <h4> Number of Peers </h4>
+            <h4> Set Number of Peers: </h4>
             <h1 onclick="lesspeers()"; style="display:inline-block"><div class="btn btn-medium btn-success"> - </div></h1>
             <div style="display:inline-block"><h3 id="peersnumber"> 4 </h3></div>
             <h1 onclick="morepeers()"; style="display:inline-block"><div class="btn btn-medium btn-success"> + </div></h1>
             
-            <h4> Payout Per Person </h4>
+            <h4> Payout Per Person: </h4>
             <h3 id="popp">$1250</h3>
 
             <script src="../assets/widget.js"></script>
               
           </div>
           
-          <div>
+          <div class="span8">
             <h2 class="featurette-heading">Easy Math<span class="muted featurette-sub-heading"><br>Widgets are Fun<br></span></h2>
             <p class="lead">Real world referral bonuses range up to $15,000. Adjust the widget to find the per person payout for your situation.</p>
-          </div>
-
-          <div class="text-center">
-            <a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a><br>
+            <div class="text-center">
+              <a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a><br>
+            </div>
           </div>
 
         </div>
