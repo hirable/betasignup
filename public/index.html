@@ -81,8 +81,6 @@
     ------------------------------*/
 
     .row-fluid {
-      padding: 30px;
-      padding-top: 60px;
       position: relative;
       *zoom: 1;
       margin: 0;
@@ -93,6 +91,11 @@
     }
     .top-container {
       background-color: #eeeeee;
+      padding: 30px;
+      padding-top: 100px;
+    }
+    .top-container .span5 {
+      padding-left: 30px;
     }
 
 
@@ -136,7 +139,7 @@
       display: inline-block;
       text-align: center;
       padding: 30px;
-      margin-right: 0px;
+      margin: 0px;
       font-size: 18px;
       font-weight: 200;
       line-height: 30px;
@@ -151,6 +154,21 @@
     -------------------------------------------------- */
 
     @media (max-width: 979px) {
+      [class*="span"],
+      .uneditable-input[class*="span"],
+      .row-fluid [class*="span"] {
+        display: block;
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+
+      .top-container {
+        padding-top: 0;
+      }
 
       .container.navbar-wrapper {
         margin-bottom: 0;
@@ -179,6 +197,9 @@
         float: none;
         max-width: 40%;
         margin: 0 auto 20px;
+      }
+      .wrap3 {
+        float: none;
       }
     }
 
@@ -259,17 +280,17 @@
 	<!--Top Container-->
 	<div class="row-fluid top-container text-center">
           <!-- Youtube Video -->
-          <div class="span8 text-center">
+          <div class="span7 text-center">
             <div class="flex-video">
               <iframe src="http://www.youtube.com/embed/F6qzfLI2Qsc?rel=0" frameborder="0" allowfullscreen=""></iframe>
             </div>
           </div>
           <!--Right Message Box with Call to Action-->
-          <div class="span4 text-center" style=""><br>
-            <h2 class="text-center">Make Hiring Easy</h2>
+          <div class="span5 text-center" style="">
+            <h3 class="text-center">High Quality Referrals</h3>
             <h4 class="text-center">with Recursive Rewards</h4><br>
-            <div class="text-center"><a class="btn btn-medium btn-primary" href="privatebeta">Join the Private Beta Test</a></div><br><br>
-            <p class="lead" style="font-size:18px; text-align:justify;">It takes high quality referrals to find the perfect fit. We want to reward you for insights on great candidates or employers, no matter where you are in the referral chain. Keep any rewards you earn while helping us beta test the concept.</p>
+            <div class="text-center"><a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a></div><br><br>
+            <p class="lead" style="font-size:18px; text-align:justify;">No matter where you are in the referral chain, be rewarded for insights on great candidates or employers. Keep any rewards you earn while helping us beta test the concept.</p>
           </div>
 	</div>
 
@@ -278,7 +299,7 @@
 
         <!--Recursive Rewards Explained-->
         <div class="featurette">
-          <br><br><br><img class="featurette-image pull-left" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
+          <br><br><br><img class="featurette-image pull-right" src="../assets/Recursive-Animation.gif" onmouseover="this.src='../assets/Recursive 1.png'" onmouseout="this.src='../assets/Recursive 2.png'">
           <h2 class="featurette-heading"><br>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
           <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
         </div>
@@ -287,7 +308,7 @@
 
         <!--MIT Media Lab-->
         <div class="featurette">
-          <img class="featurette-image pull-right" src="../assets/Map-Animation.gif" onmouseover="this.src='../assets/Map 2.png'" onmouseout="this.src='../assets/Map 1.png'">
+          <img class="featurette-image pull-left" src="../assets/Map-Animation.gif" onmouseover="this.src='../assets/Map 2.png'" onmouseout="this.src='../assets/Map 1.png'">
           <h2 class="featurette-heading">MIT Media Lab <span class="muted featurette-sub-heading"><br>Experiment Applied</span></h2>
           <p class="lead">In a nationwide sourcing challenge hosted by DARPA, the MIT Media Lab was the only team to use recursive rewards. It paid off: They recruited nearly 5000 participants in under 9 hours, making them three times more successful than any other team.</p>
         </div>
@@ -296,6 +317,11 @@
 
         <!--Slider Widget-->
         <div class="row-fluid featurette">
+          <div class="span8">
+            <h2 class="featurette-heading">Easy Math<span class="muted featurette-sub-heading"><br>Widgets are Fun<br></span></h2>
+            <p class="lead">Real world referral bonuses range up to $15,000. Adjust the widget to find the per person payout for your situation.</p>
+          </div>
+
           <div class="wrap3 span4 pull-left">
             <h3> Calculate Per Person Payout </h3>
             <h4> Set Referral Bonus: </h4>
@@ -316,16 +342,15 @@
             <script src="../assets/widget.js"></script>
               
           </div>
+        </div>
+
+        <br><br>
           
-          <div class="span8">
-            <h2 class="featurette-heading">Easy Math<span class="muted featurette-sub-heading"><br>Widgets are Fun<br></span></h2>
-            <p class="lead">Real world referral bonuses range up to $15,000. Adjust the widget to find the per person payout for your situation.</p>
-            <div class="text-center">
+          <div class="text-center">
               <a class="btn btn-large btn-primary" href="privatebeta">Join the Private Beta Test</a><br>
-            </div>
           </div>
 
-        </div>
+        <br>
 
         <hr class="featurette-divider">
 
