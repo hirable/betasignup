@@ -48,6 +48,10 @@
         padding: 7px 9px;
       }
 
+      .input-block-level {
+        width: 300px;
+      }
+
 
     </style>
 
@@ -63,18 +67,16 @@
   <body>
 
   <div class="container">
-    <div class="row">
-      <div class="span3 offset5">
+    <div class="text-center">
       <h2 class="form-signin-heading">To Be Continued</h2>
         <p>Due to overwhelming response, all spots for our private beta test have been filled. We will increase capacity very shortly.</p><br>
-
             <%= form_for @signup, {:class => "form-inline"} do |f| %>
               <%= render 'shared/error_messages' %>
-                <%= f.text_field :email, :placeholder => "Leave your email to join the expansion", :class => "input-block-level" %>
-                <%= f.submit "Submit My Email and Notify Me Soon!", class: "btn btn-primary" %>
+                <%= f.text_field :email, :placeholder => "Leave your email to join the expansion", :class => "input-block-level text-center"%><br>
+                <%= f.submit "Submit My Email and Notify Me Soon", class: "btn btn-primary" %>
             <% end %>
             <% if flash[:success] %>
-              <h3 id="success"><%= flash[:success] %></h3>
+              <h4 id="success"><%= flash[:success] %></h4>
             <% end %>
 
 

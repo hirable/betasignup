@@ -5,7 +5,8 @@ class Signup < ActiveRecord::Base
   validates :email,
       presence: true,
       format: { with: VALID_EMAIL_REGEX },
-      uniqueness: { case_sensitive: false }
+      uniqueness: { case_sensitive: false },
+      length: { maximum: 30 }
 
   before_save :tidy_email
 
