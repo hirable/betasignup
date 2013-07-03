@@ -59,6 +59,7 @@
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      margin-left: 0px;
     }
 
     /* Navbar links: increase padding for taller navbar */
@@ -71,7 +72,31 @@
       margin-top: 10px;
     }
 
+    /* Customize the top container 
+    ------------------------------*/
 
+    .row-fluid {
+      padding: 0px;
+      padding-top: 60px;
+      position: relative;
+      *zoom: 1;
+      background-color: #eeeeee;
+      margin: 0;
+    }
+
+    .span8 {
+      padding-right: 20px;
+      padding-left: 30px;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .span4 {
+      padding-left: 20px;
+      padding-right: 0px;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
 
     /* Featurettes
     ------------------------- */
@@ -85,6 +110,7 @@
     }
     .featurette-image {
       margin-top: 0px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+      width: 50%;
     }
 
     /* Give some space on the sides of the floated elements so text doesn't run right into it. */
@@ -234,11 +260,8 @@
         <div style="clear:both;"></div>
       </div>
 
-      <!--Middle Panels-->
-      <div class="container marketing">
-
 	<!--Top Container-->
-	<div class="row text-center">
+	<div class="row-fluid text-center">
           <!-- Youtube Video -->
           <div class="span8 text-center">
             <div class="flex-video">
@@ -246,13 +269,16 @@
             </div>
           </div>
           <!--Right Message Box with Call to Action-->
-          <div class="span4 text-center" style="">
+          <div class="span4 text-center" style=""><br>
             <h2 class="text-center">Make Hiring Easy</h2>
             <h4 class="text-center">with Recursive Rewards</h4><br>
             <div class="text-center"><a class="btn btn-medium btn-primary" href="privatebeta">Join the Private Beta Test</a></div><br><br>
             <p class="lead" style="font-size:18px; text-align:justify;">It takes high quality referrals to find the perfect fit. We want to reward you for insights on great candidates or employers, no matter where you are in the referral chain. Keep any rewards you earn while helping us beta test the concept.</p>
           </div>
 	</div>
+
+        <!--Middle Panels-->
+      <div class="container marketing">
 
         <!--Recursive Rewards Explained-->
         <div class="featurette">
@@ -274,7 +300,7 @@
 
         <!--Slider Widget-->
         <div class="featurette">
-          <div class="wrap3 pull-left">
+          <div class="container pull-left">
             <h3>Calculate Per Person Payout</h3>
             <h4> Referral Bonus </h4>
             
