@@ -6,7 +6,7 @@ class Signup < ActiveRecord::Base
       presence: true,
       format: { with: VALID_EMAIL_REGEX },
       uniqueness: { case_sensitive: false },
-      length: { maximum: 30 }
+      length: { maximum: 50 }
 
   before_save :tidy_email
 
