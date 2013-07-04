@@ -3,7 +3,7 @@
 //var result;
 
 var bonuscash = 5000;
-var peernum = 3;
+var peernum = 2;
 var payout = bonuscash/peernum;
 
 var rbonus = document.getElementById("referralbonus");
