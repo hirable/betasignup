@@ -55,7 +55,7 @@
 
     /* Downsize the brand/project name a bit */
     .navbar .brand {
-      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      padding: 14px 0 16px 0; /* Increase vertical padding to match navbar links */
       font-size: 16px;
       font-weight: bold;
       text-shadow: 0 -1px 0 rgba(0,0,0,.5);
@@ -180,6 +180,11 @@
       .navbar-inner {
         border-radius: 0;
         margin: 0px;
+      }
+
+      .navbar .brand {
+        padding-right: 20px;
+        padding-left: 20px;
       }
 
       .carousel .item {
