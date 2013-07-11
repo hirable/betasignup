@@ -111,20 +111,28 @@
       margin: 40px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
+      margin: 40px 0;
       padding-top: 10px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
     }
     .featurette-image {
       margin-top: 0px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    .featurette-block {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      display: inline-block;
       width: 50%;
     }
 
     /* Give some space on the sides of the floated elements so text doesn't run right into it. */
     .featurette-image.pull-left {
-      margin-right: 40px;
+      padding-right: 40px;
     }
     .featurette-image.pull-right {
-      margin-left: 40px;
+      padding-left: 40px;
     }
 
     /* Thin out the marketing headings */
@@ -156,6 +164,10 @@
       -webkit-user-select: none;
          -moz-user-select: none;
           -ms-user-select: none;
+    }
+
+    .lead {
+      text-align: justify;
     }
 
     /* RESPONSIVE CSS
@@ -212,12 +224,17 @@
         height: auto;
         padding: 10;
       }
+
+      .featurette-block {
+        display: block;
+        width: 100%;
+      }
       .featurette-image.pull-left,
       .featurette-image.pull-right {
-        display: block;
         float: none;
-        max-width: 40%;
-        margin: 0 auto 20px;
+        margin: 0 auto 20px auto;
+        padding: 0;
+        text-align: center;
       }
       .wrap3 {
         float: none;
@@ -266,7 +283,7 @@
       .featurette-heading {
         font-size: 30px;
       }
-      .featurette .lead {
+      .lead {
         font-size: 18px;
         line-height: 1.5;
       }
@@ -327,18 +344,24 @@
 
       <!--Recursive Rewards Explained-->
       <div class="featurette">
-        <br><br><br><img class="featurette-image pull-right" src="../assets/Recursive-Animation.gif">
-        <h2 class="featurette-heading"><br>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
-        <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
+        <div class="featurette-block featurette-image pull-right">
+          <img src="../assets/Recursive-Animation.gif">
+        </div><div class="featurette-block">
+          <h2 class="featurette-heading">Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
+          <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
+        </div>
       </div>
 
       <hr class="featurette-divider">
 
       <!--MIT Media Lab-->
       <div class="featurette">
-        <img class="featurette-image pull-left" src="../assets/Map-Animation.gif">
-        <h2 class="featurette-heading">MIT Media Lab <span class="muted featurette-sub-heading"><br>Experiment Applied</span></h2>
-        <p class="lead">In a nationwide sourcing challenge hosted by DARPA, the MIT Media Lab was the only team to use recursive rewards. It paid off: They recruited nearly 5000 participants in under 9 hours, making them three times more successful than any other team.</p>
+        <div class="featurette-block featurette-image pull-left">
+          <img src="../assets/Map-Animation.gif">
+        </div><div class="featurette-block">
+          <h2 class="featurette-heading">MIT Media Lab <span class="muted featurette-sub-heading"><br>Experiment Applied</span></h2>
+          <p class="lead">In a nationwide sourcing challenge hosted by DARPA, the MIT Media Lab was the only team to use recursive rewards. It paid off: They recruited nearly 5000 participants in under 9 hours, making them three times more successful than any other team.</p>
+        </div>
       </div>
 
       <hr class="featurette-divider">
