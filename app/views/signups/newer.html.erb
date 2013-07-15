@@ -368,8 +368,8 @@
       <div style="clear:both;"></div>
     </div>
 
-  	<!--Top Container-->
-  	<div class="row-fluid top-container text-center">
+    <!--Top Container-->
+    <div class="row-fluid top-container text-center">
       <div class="container">
             <!-- Youtube Video -->
             <div class="span7 text-center">
@@ -385,7 +385,7 @@
               <p class="lead" style="text-align:justify;">No matter where you are in the referral chain, be rewarded for insights on great candidates or employers. Keep any rewards you earn while helping us pilot test the concept.</p>
             </div>
       </div>
-  	</div>
+    </div>
 
     <!--Middle Panels-->
     <div class="container marketing">
@@ -398,7 +398,17 @@
           <p><b>Who: </b>Hiring manager or passionate employee. Your company offers referral bonuses. 
           <p><b>Why: </b>Searching for the perfect fit and will share the referral bonus with those who help.</p>
           <p><b>How: </b>List search criteria &rarr; Offer a reward &rarr; Send out.</p>
-          <p><a class="btn" href="#">Sign up to be an Originator &raquo;</a></p>
+
+          <%= form_for @signup, {:class => "form-inline"} do |f| %>
+              <%= render 'shared/error_messages' %>
+                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
+                <%= f.hidden_field :originator => true %> 
+                <%= f.submit "as Originator", class: "btn btn-success" %>
+            <% end %>
+            <% if flash[:success] %>
+              <h4 id="success"><%= flash[:success] %></h4>
+            <% end %>
+
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
@@ -406,7 +416,17 @@
           <p><b>Who: </b>You know a lot of people. You want to make recruiting warmer for all involved.</p>
           <p><b>Why: </b>Take pride in making intros to great talent or great teams.</p>  
           <p><b>How: </b>Receive search opportunities. &rarr; Make high quality referrals with your insights.</p>
-          <p><a class="btn" href="#">Sign up to be a Connector &raquo;</a></p>
+
+          <%= form_for @signup, {:class => "form-inline"} do |f| %>
+              <%= render 'shared/error_messages' %>
+                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
+                <%= f.hidden_field :referrer => true %> 
+                <%= f.submit "as Referrer", class: "btn btn-success btn-primary" %>
+            <% end %>
+            <% if flash[:success] %>
+              <h4 id="success"><%= flash[:success] %></h4>
+            <% end %>
+
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
@@ -414,7 +434,17 @@
           <p><b>Who: </b>You are fantastic talent, looking to create a role and find a fantastic team.</p>
           <p><b>Why: </b>You need high quality referrals</p>
           <p><b>How: </b>List criteria. &rarr; Request high quality referrals.</p>
-          <p><a class="btn" href="#">Sign up to be a Candidate &raquo;</a></p>
+
+          <%= form_for @signup, {:class => "form-inline"} do |f| %>
+              <%= render 'shared/error_messages' %>
+                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
+                <%= f.hidden_field :candidate => true %> 
+                <%= f.submit "as Candidate", class: "btn btn-success btn-danger" %>
+            <% end %>
+            <% if flash[:success] %>
+              <h4 id="success"><%= flash[:success] %></h4>
+            <% end %>
+
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
