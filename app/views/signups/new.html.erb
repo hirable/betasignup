@@ -432,21 +432,21 @@
 
       <div class="row-fluid">
         <div class="span4">
-          <%= form_for @signup, {:class => "form-inline"} do |f| %>
+          <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
                 <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
                 <%= f.hidden_field :originator, :value => true %> 
                 <%= f.submit "as Originator", class: "btn btn-success" %>
             <% end %>
         </div>
         <div class="span4">
-            <%= form_for @signup, {:class => "form-inline"} do |f| %>
+            <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
                 <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
                 <%= f.hidden_field :referrer, :value => true %> 
                 <%= f.submit "as Referrer", class: "btn btn-primary" %>
             <% end %>
         </div>
         <div class="span4">    
-            <%= form_for @signup, {:class => "form-inline"} do |f| %>
+            <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
                 <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
                 <%= f.hidden_field :candidate, :value => true %> 
                 <%= f.submit "as Candidate", class: "btn btn-danger" %>
