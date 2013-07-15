@@ -22,6 +22,6 @@ ActiveRecord::Schema.define(:version => 20130715213116) do
     t.boolean  "candidate",  :default => false
   end
 
-  add_index "signups", ["email"], :name => "index_signups_on_email", :unique => true
+  add_index "signups", ["email"], :name => "index_signups_on_email"
 
 end
