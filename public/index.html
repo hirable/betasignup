@@ -121,6 +121,11 @@
     -------------------------------------------------- */
 
     /* Center align the text within the three columns below the carousel */
+    .action {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
     .marketing .span4 {
       text-align: left;
     }
@@ -233,6 +238,11 @@
       .navbar-inner {
         border-radius: 0;
         margin: 0px;
+      }
+
+      .action {
+        padding-top: 0;
+        padding-bottom: 0;
       }
 
       .carousel .item {
@@ -359,7 +369,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a href="privatebeta" class="brand">Join the Pilot Test</a>
+          <a href="#action" class="brand">Join the Pilot Test</a>
           <div class="pull-right">
             <a href="mailto:evelyn@hirable.org?Subject=Hello%20There!" class="brand">Contact Us</a>
           </div>
@@ -371,17 +381,14 @@
   	<!--Top Container-->
   	<div class="row-fluid top-container text-center">
       <div class="container">
-            <!-- Youtube Video -->
-            <div class="span7 text-center">
-              <div class="flex-video">
-                <iframe src="http://www.youtube.com/embed/F6qzfLI2Qsc?rel=0" frameborder="0" allowfullscreen=""></iframe>
-              </div>
-            </div>
+          <div class="span7">
+            <img src="../assets/Recursive-Animation.gif">
+          </div>
             <!--Right Message Box with Call to Action-->
             <div class="span5 text-center" style="">
               <h3 class="text-center">High Quality Referrals</h3>
               <h4 class="text-center">with Recursive Rewards</h4><br>
-              <div class="text-center"><a class="btn btn-large btn-primary" href="privatebeta">Join the Pilot Test</a></div><br><br>
+              <div class="text-center"><a class="btn btn-large btn-primary" href="#action">Join the Pilot Test</a></div><br><br>
               <p class="lead" style="text-align:justify;">No matter where you are in the referral chain, be rewarded for insights on great candidates or employers. Keep any rewards you earn while helping us pilot test the concept.</p>
             </div>
       </div>
@@ -391,7 +398,8 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the main container -->
-      <div class="row">
+      <a name="action"></a>
+      <div class="row-fluid action">
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2>Originator</h2>
@@ -402,13 +410,13 @@
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Connector</h2>
+          <h2>Referrer</h2>
           <p><b>Who: </b>You know a lot of people. You want to make recruiting warmer for all involved.</p>
           <p><b>Why: </b>Take pride in making intros to great talent or great teams.</p>  
           <p><b>How: </b>Receive search opportunities. &rarr; Make high quality referrals with your insights.</p>
           <p><a class="btn" href="#">Sign up to be a Connector &raquo;</a></p>
         </div><!-- /.span4 -->
-        <div class="span3">
+        <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2>Candidate</h2>
           <p><b>Who: </b>You are fantastic talent, looking to create a role and find a fantastic team.</p>
@@ -418,14 +426,17 @@
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
-      <!--Recursive Rewards Explained-->
+      <hr class="featurette-divider">
+
+      <!--Slider Widget-->
       <div class="featurette">
         <div class="featurette-block featurette-image pull-right">
-          <img src="../assets/Recursive-Animation.gif">
-        </div><div class="featurette-block">
-          <h2 class="featurette-heading">Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
-          <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, and ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution.</p>
+          <div class="flex-video">
+            <iframe src="http://www.youtube.com/embed/F6qzfLI2Qsc?rel=0" frameborder="0" allowfullscreen=""></iframe>
+          </div>
         </div>
+        <h2 class="featurette-heading">Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
+        <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, and ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution. Real world referral bonuses range from $500 up to $15,000.</p>
       </div>
 
       <hr class="featurette-divider">
@@ -440,40 +451,10 @@
         </div>
       </div>
 
-      <hr class="featurette-divider">
-
-      <!--Slider Widget-->
-      <div class="row-fluid featurette">
-        <div class="span8">
-          <h2 class="featurette-heading">Easy Math<span class="muted featurette-sub-heading"><br>Calculate per Person Payout<br></span></h2>
-          <p class="lead">Real world referral bonuses range from $500 up to $15,000. Click the buttons to find the per person payout for your situation.</p>
-        </div>
-
-        <div class="wrap3 span4 pull-left">
-          <h4> Set Referral Bonus Policy: </h4>
-          
-          <h1 onclick="lessbonus()"; style="display:inline-block"><div class="btn btn-large btn-success"> - </div></h1>
-          <div style="display:inline-block"><h3 id="referralbonus"> $5000 </h3></div>
-          <h1 onclick="morebonus()"; style="display:inline-block"><div class="btn btn-large btn-success"> + </div></h1>
-
-
-          <h4> Set Number of Peers: </h4>
-          <h1 onclick="lesspeers()"; style="display:inline-block"><div class="btn btn-large btn-success"> - </div></h1>
-          <div style="display:inline-block"><h3 id="peersnumber"> 2 </h3></div>
-          <h1 onclick="morepeers()"; style="display:inline-block"><div class="btn btn-large btn-success"> + </div></h1>
-          
-          <h4> Payout Per Peer: </h4>
-          <h3 id="popp">$2500</h3>
-
-          <script src="../assets/widget.js"></script>
-            
-        </div>
-      </div>
-
       <br><br>
         
       <div class="text-center">
-          <a class="btn btn-large btn-primary" href="privatebeta">Join the Pilot Test</a><br>
+          <a class="btn btn-large btn-primary" href="#action">Join the Pilot Test</a><br>
       </div>
 
       <br>
