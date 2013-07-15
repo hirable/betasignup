@@ -3,7 +3,7 @@ Landingpage::Application.routes.draw do
   
   get "signups/new"
 
-  match "privatebeta" => "signups#new"
+  match "privatebeta" => "signups#new", via: [:get, :post]
   #resources :privatebeta, :controller => 'signups'
 
   # The priority is based upon order of creation:
