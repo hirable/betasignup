@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>Hirable.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Hirable.org">
     <meta name="author" content="Hirable.org">
@@ -127,7 +128,10 @@
     /* Center align the text within the three columns below the carousel */
     .action {
       padding-top: 50px;
-      padding-bottom: 50px;
+    }
+
+    .mobile-version {
+      display: none;
     }
 
     .marketing .span4 {
@@ -243,6 +247,14 @@
       .action {
         padding-top: 0;
         padding-bottom: 0;
+      }
+
+      .mobile-version {
+        display: inherit;
+      }
+
+      .desktop-version {
+        display: none;
       }
 
       .carousel .item {
@@ -384,14 +396,14 @@
     <div class="row-fluid top-container text-center">
       <div class="container">
           <div class="span7">
-            <img src="../assets/Recursive-Animation.gif">
+            <img src="../assets/original.png">
           </div>
             <!--Right Message Box with Call to Action-->
             <div class="span5 text-center" style="">
               <h2 class="text-center">High Quality Referrals</h2>
               <h3 class="text-center">with Recursive Rewards</h3><br>
               <div class="text-center"><a class="btn btn-large btn-primary" href="#action">Join the Pilot Test</a></div><br><br>
-              <p class="lead" style="text-align: justify;">No matter where you are in the referral chain, be rewarded for insights on great candidates or employers. Keep any rewards you earn while helping us pilot test the concept.</p>
+              <p class="lead" style="text-align: justify;">No matter where you are in the referral chain, be rewarded for insights on great candidates or employers. Keep any rewards you earn while helping us pilot test the concept. Our pilot will include referral bonuses ranging up to $15,000. </p>
             </div>
       </div>
     </div>
@@ -406,50 +418,47 @@
         <div class="span4">
           <h2><img src="../assets/Originator.png"><b>Originator</b></h2>
           <div class="lead">
-            <p><b>Who:</b> Hiring manager or passionate employee. Your company has a referral bonus policy. 
-            <p><b>Why:</b> Searching for the perfect fit. Will share reward with those who help.</p>
+            <p><b>Who:</b> You are a hiring manager or passionate employee. Your company has a referral bonus policy. 
+            <p><b>Why:</b> You are searching for the best hire and will share rewards with those who help.</p>
             <p><b>How:</b> List search criteria &rarr; Offer a reward &rarr; Send out.</p>
+          </div>
+          <div class="mobile-version">
+            <%= render "originator" %>
           </div>
         </div><!-- /.span4 -->
         <div class="span4">
           <h2><img src="../assets/Referrer.png"><b>Referrer</b></h2>
           <div class="lead">
-            <p><b>Who:</b> Natural connector, knows tons of people. Wants to make recruiting warmer for all involved.</p>
-            <p><b>Why:</b> Takes pride in tracking and making intros to great talent and teams.</p>  
-            <p><b>How:</b> Receive postings &rarr; Give high quality insights.</p>
+            <p><b>Who:</b> You are a natural connector. You know lots of people. You take pride in tracking what people need. </p>
+            <p><b>Why:</b> Get rewarded for doing what you already do best. Make recruiting warmer for all.</p>
+            <p><b>How:</b> Receive postings &rarr; Give high quality insights &rarr; Refer.</p>
+          </div>
+          <div class="mobile-version">
+            <%= render "referrer" %>           
           </div>
         </div><!-- /.span4 -->
         <div class="span4">
           <h2><img src="../assets/Candidate.png"><b>Candidate</b></h2>
           <div class="lead">
-            <p><b>Who:</b> Fantastic talent. An opportunity for the right team.</p>
-            <p><b>Why:</b> Wants to create own role and impact. Deserving of high quality referrals. </p>
+            <p><b>Who:</b> You are fantastic talent. You're an opportunity for the right team. You want to create your own role and impact. </p>
+            <p><b>Why:</b> You deserve high quality referrals. You want exposure to greater volume of teams.</p>
             <p><b>How:</b> List search criteria &rarr; Receive referrals &rarr; Apply.</p>
+          </div>
+          <div class="mobile-version">
+            <%= render "candidate" %>
           </div>            
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 
-      <div class="row-fluid">
+      <div class="row-fluid desktop-version">
         <div class="span4">
-          <%= form_for @signup, {:class => "form-inline"} do |f| %>
-                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
-                <%= f.hidden_field :originator, :value => true %> 
-                <%= f.submit "as Originator", class: "btn btn-success" %>
-            <% end %>
+          <%= render "originator" %>
         </div>
         <div class="span4">
-            <%= form_for @signup, {:class => "form-inline"} do |f| %>
-                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
-                <%= f.hidden_field :referrer, :value => true %> 
-                <%= f.submit "as Referrer", class: "btn btn-primary" %>
-            <% end %>
+            <%= render "referrer" %>
         </div>
         <div class="span4">    
-            <%= form_for @signup, {:class => "form-inline"} do |f| %>
-                <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level text-center"%>
-                <%= f.hidden_field :candidate, :value => true %> 
-                <%= f.submit "as Candidate", class: "btn btn-danger" %>
-            <% end %>
+            <%= render "candidate" %>
           </div>
         </div>
 
@@ -471,7 +480,7 @@
           </div>
         </div>
         <h2>Recursive Rewards <span class="muted featurette-sub-heading"><br>Simply Explained</span></h2>
-        <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, and ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution. Our pilot will include referral bonuses ranging up to $15,000.</p>
+        <p class="lead">Your peers may not know the right person for the job, but their contacts can open up promising talent communities. Motivate those outside your immediate circle of peers by offering them an equal part of the referral bonus. We'll keep track of the sequential referrals, and ensure they are trustworthy and high quality. When a candidate is hired, we reward everyone who was part of the solution. </p>
       </div>
 
       <hr class="featurette-divider">
