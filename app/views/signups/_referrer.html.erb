@@ -1,5 +1,4 @@
 <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
-    <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
-    <%= f.hidden_field :referrer, :value => true %> 
+    <%= f.text_field :referrer_email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
     <%= f.submit "as Referrer", class: "btn btn-primary" %>
 <% end %> 

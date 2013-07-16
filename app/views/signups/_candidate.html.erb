@@ -1,5 +1,7 @@
 <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
-    <%= f.text_field :email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
-    <%= f.hidden_field :candidate, :value => true %> 
+  <%= render 'shared/error_messages' %>
+    <%= f.text_field :candidate_email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
+    <%= f.hidden_field :originator_email, :value => "" %>
+    <%= f.hidden_field :referrer_email, :value => "" %>
     <%= f.submit "as Candidate", class: "btn btn-danger" %>
 <% end %> 

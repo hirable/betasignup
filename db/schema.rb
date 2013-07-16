@@ -11,17 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715213116) do
+ActiveRecord::Schema.define(:version => 20130716025245) do
 
   create_table "signups", :force => true do |t|
-    t.string   "email"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.boolean  "originator", :default => false
-    t.boolean  "referrer",   :default => false
-    t.boolean  "candidate",  :default => false
+    t.string   "originator_email"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "referrer_email"
+    t.string   "candidate_email"
   end
-
-  add_index "signups", ["email"], :name => "index_signups_on_email", :unique => true
 
 end
