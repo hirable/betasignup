@@ -400,8 +400,12 @@
 
     <div class="row-fluid top-container text-center">
       <% if flash[:success] %>
-      <h4 id="success" class="text-success"><%= flash[:success] %></h4>
-      <br>
+        <h4 id="success" class="text-success"><%= flash[:success] %></h4>
+        <br>
+      <% end %>
+      <% if flash[:failure] %>
+        <h4 id="failure" class="text-error"><%= flash[:failure] %></h4>
+        <br>
       <% end %>
 
       <div class="container">

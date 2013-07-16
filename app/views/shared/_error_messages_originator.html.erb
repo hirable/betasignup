@@ -1,0 +1,12 @@
+<% if @originator.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      <%= pluralize(@originator.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @originator.errors.full_messages.each do |msg| %>
+      <li>* <%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

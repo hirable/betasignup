@@ -1,0 +1,17 @@
+<%= form_for(@originator) do |f| %>
+  <% if @originator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@originator.errors.count, "error") %> prohibited this originator from being saved:</h2>
+
+      <ul>
+      <% @originator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
