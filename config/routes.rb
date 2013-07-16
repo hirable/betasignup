@@ -1,11 +1,19 @@
 Landingpage::Application.routes.draw do
   resources :signups
+
+  #get "signups/new"
   
-  get "signups/new"
+  #get "signups" => 'signups#new'
+  #post "signups#index" => 'signups#new'
+
+  #post 'signups/:action', controller: 'signups', as: :signups
 
   root to: 'signups#new'
 
-  #match "privatebeta" => "signups#new", via: [:get, :post]
+  #match "signup#show" => "signups#new"
+
+  match "signups/show" => "signups#new", via: [:get, :post]
+  match "signups/index" => "signups#new", via: [:get, :post]
   #resources :privatebeta, :controller => 'signups'
 
   # The priority is based upon order of creation:

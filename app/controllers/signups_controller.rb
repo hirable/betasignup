@@ -7,7 +7,7 @@ class SignupsController < ApplicationController
     @signup = Signup.new(params[:signup])
     if @signup.save
       flash[:success] = "Thanks! Got it. We'll notify you soon!"
-      redirect_to privatebeta_url
+      redirect_to :back
     else
       render 'new'
     end

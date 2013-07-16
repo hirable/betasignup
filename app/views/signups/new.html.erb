@@ -11,8 +11,9 @@
     <link href="../assets/bootstrap.css" rel="stylesheet">
     <link href="../assets/bootstrap-responsive.css" rel="stylesheet">
     <link href="../assets/responsive-video.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!-- <script src="../assets/youtube.js"></script> -->
+    <script src="../assets/boostrap-modal.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+     <script src="../assets/youtube.js"></script> -->
     
     <script type="text/javascript">
       var fb_param = {};
@@ -391,7 +392,13 @@
     </div>
 
     <!--Top Container-->
+
     <div class="row-fluid top-container text-center">
+      <% if flash[:success] %>
+      <h4 id="success" class="text-success"><%= flash[:success] %></h4>
+      <br>
+      <% end %>
+
       <div class="container">
           <div class="span7">
             <img src="../assets/original.png">
@@ -459,14 +466,6 @@
             <%= render "candidate" %>
           </div>
         </div>
-
-      <div class="text-center">
-
-            <% if flash[:success] %>
-              <h4 id="success"><%= flash[:success] %></h4>
-            <% end %>
-
-      </div>
 
       <hr class="featurette-divider">
 
