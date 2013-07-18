@@ -50,6 +50,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.7)
+    newrelic_rpm (3.6.5.130)
     pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -107,6 +108,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.6)
   faker (= 1.0.1)
   jquery-rails (= 2.0.2)
+  newrelic_rpm
   pg
   rails (= 3.2.13)
   sqlite3

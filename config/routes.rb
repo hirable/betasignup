@@ -9,12 +9,10 @@ Landingpage::Application.routes.draw do
 
 
   resources :signups
-
-  #get "signups/new"
   
-  get "signups" => 'signups#new'
-  post "signups" => 'signups#new'
-  post "signups#index" => 'signups#new'
+  #get "signups" => 'signups#new', 
+  #post "signups" => 'signups#new'
+  #post "signups#index" => 'signups#new'
 
   #post 'signups/:action', controller: 'signups', as: :signups
 
