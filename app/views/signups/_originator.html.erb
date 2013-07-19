@@ -1,5 +1,5 @@
 <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
 
       <%= f.text_field :originator_email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
-      <%= f.submit "as Originator", class: "btn btn-success" %>
+      <%= f.submit "as Originator", class: "btn btn-success", onclick: "goog_report_conversion();" %>
 <% end %>

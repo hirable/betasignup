@@ -1,5 +1,5 @@
 <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
 
     <%= f.text_field :referrer_email, :placeholder => "Leave your email to join", :class => "input-block-level"%>
-    <%= f.submit "as Referrer", class: "btn btn-primary" %>
+    <%= f.submit "as Referrer", class: "btn btn-primary", onclick: "goog_report_conversion();" %>
 <% end %> 
