@@ -1,4 +1,4 @@
 <%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
-    <%= f.text_field :candidate_email, :placeholder => "Sign up to join as", :class => "input-block-level"%>
+    <%= f.text_field :candidate_email, :placeholder => "Sign up to join as", :style => "text-align: center", :class => "input-block-level"%>
     <%= f.submit "Candidate", class: "btn btn-danger", onclick: "goog_report_conversion();" %>
 <% end %> 
