@@ -1,5 +1,6 @@
-<%= form_for @signup, :html => {:class => "form-inline"} do |f| %>
-
-      <%= f.text_field :originator_email, :placeholder => "Sign up to join as", :style => "text-align: center", :class => "input-block-level"%>
-      <%= f.submit "Originator", class: "btn btn-success", onclick: "goog_report_conversion();" %>
+<%= form_for :signup, :html => {:class => "form-inline"}, :url => {:action => :create} do |f| %>
+  <div class="text-center">
+    <%= f.text_field :originator_email, :placeholder => "email address", :style => "text-align: center", :class => "input-block-level"%>
+    <%= f.submit "Request as Originator", class: "btn btn-success", onclick: "goog_report_conversion();" %>
+  </div>
 <% end %>

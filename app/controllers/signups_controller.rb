@@ -19,5 +19,8 @@ class SignupsController < ApplicationController
       render 'new'
     end
   end
+
+  def signup
+  end
   
 end

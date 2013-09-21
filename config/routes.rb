@@ -1,18 +1,7 @@
 Landingpage::Application.routes.draw do
-  #resources :candidates
-
-
-  #resources :referrers
-
-
-  #resources :originators
-
-
   resources :signups
-  
-  #get "signups" => 'signups#new', 
-  #post "signups" => 'signups#new'
-  #post "signups#index" => 'signups#new'
+
+  get '/signup' => 'signups#signup', as: 'signup'
 
   #post 'signups/:action', controller: 'signups', as: :signups
 
